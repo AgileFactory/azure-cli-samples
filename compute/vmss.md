@@ -21,29 +21,47 @@ Here are some useful commands that may help you on your journey
 
 create a new virtual machine scale set
 ```
-az vm scaleset create -g mygroup -n MyScaleSet --image opensuse --instance-count 3
+az vmss show create -g mygroup -n MyScaleSet --image opensuse --instance-count 3
 ```
 
 get a list of all scale sets
 ```
-az vm scaleset list -g MyGroup
+az vmss show list -g MyGroup
 ```
 
 get a list of all VMs in a scale set
 ```
-az vm scaleset list-instances -g MyGroup -n MyScaleSet 
+az vmss show list-instances -g MyGroup -n MyScaleSet 
 ```
 
 show a VM in a scale set
 ```
-az vm scaleset show-instance -g MyGroup -n MyScaleSet --instance-id 0
+az vmss show --resource-group DEVRG --name myVMSS --instance-id 0
 ```
 
 stop two vms
 ```
-az vm scaleset stop -g MyGroup -n MyScaleSet --instance-ids 0 2
+az vmss show stop -g MyGroup -n MyScaleSet --instance-ids 0 2
 ```
 stop all vms in a scale set
 ```
-az vm scaleset stop -g MyGroup -n MyScaleSet
+az vmss show stop -g MyGroup -n MyScaleSet
 ```
+
+az vmss get-instance-view \
+    --resource-group DEVRG\
+    --name myVMSS \
+    --instance-id 0
+
+
+
+ List ip adress from VMSS
+```
+ az vmss list-ip-adresses  -n myVMSS --resource-group iasearch-fraud-lab-rg --subscription ca1eeeca-231f-4a91-a740-04eaeb043516
+ ```
+
+
+ List nic car from VMSS
+```
+ az vmss nic list  --vmss-name  <VMSS NAME>  --resource-group <RESOURCE GROUP> --subscription <souscription>
+ ```

@@ -25,13 +25,13 @@ Create a Windows VM
 az vm create -g MyRG -n MyVM --admin-password "Password123"
 ```
 
-Or to create a Linux VM.  
+* Or to create a Linux VM.  
 > Use tab completion (tab, tab) after --image to see a list of popular images.
 ```
 az vm create -g MyRG -n MyVM --image openSuse
 ```
 
-You can stop all your VM's at once.  **NOTE** This command applys to **all**
+* You can stop all your VM's at once.  **NOTE** This command applys to **all**
 resource groups in your subscription.
 ```
 az vm list --query [].[resourceGroup,name] --out tsv | xargs -L1 bash -c 'az vm stop -g $0 -n $1'
@@ -40,17 +40,28 @@ az vm list --query [].[resourceGroup,name] --out tsv | xargs -L1 bash -c 'az vm 
 # az vm stop $(az vm list --out ids)
 ```
 
-You can also use xargs to find all running VMs
+* You can also use xargs to find all running VMs
 ```
 az vm list --query [].[resourceGroup,name] --out tsv | xargs -L1 bash -c 'az vm show -g $0 -n $1 --expand instanceView --query "[resourceGroup, name, instanceView.statuses[1].displayStatus]"'
 ```
 
-Add a new data disk to an existing VM
+* Add a new data disk to an existing VM
 ```
 az vm disk attach-new -g MyRG --vm-name MyVM -n MyNewDisk --lun 0 --vhd 'http://vhdstorage[...].blob.core.windows.net/vhds/newdisk.vhd'
 ```
 
-You can add a SSH key to a Linux VM
+* You can add a SSH key to a Linux VM
 ```
 az vm access set-linux-user -g mygroup -n myvm -u ops --ssh-key-value ~/.ssh/id_rsa.pub
 ```
+
+* List ip of VM 
+```
+az vm list-ip-addresses -g DEVRG -n bastion001 
+
+```
+
+
+
+
+
