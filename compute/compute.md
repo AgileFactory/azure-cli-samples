@@ -62,6 +62,10 @@ az vm list-ip-addresses -g DEVRG -n bastion001
 ```
 
 
+* Add tag to a resource 
+
+
+
 
 
 
