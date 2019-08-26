@@ -6,9 +6,9 @@ Compute Topics:
 * [Managing Availability Sets](availability-set.md)
 * [Managing Azure Container Services](container-service.md)
 
-# (Optional) Create a new resource group 
+# (Optional) Create a new resource group
 When trying new things out, consider creating a new resource group to experiment with:
-> Many creation commands will use the resource group's location as a default value. 
+> Many creation commands will use the resource group's location as a default value.
 ```
 az group create -l westus -n MyRG
 ```
@@ -31,7 +31,7 @@ az vmss show list -g MyGroup
 
 get a list of all VMs in a scale set
 ```
-az vmss show list-instances -g MyGroup -n MyScaleSet 
+az vmss show list-instances -g MyGroup -n MyScaleSet
 ```
 
 show a VM in a scale set
@@ -57,11 +57,11 @@ az vmss get-instance-view \
 
  List ip adress from VMSS
 ```
- az vmss list-ip-adresses  -n myVMSS --resource-group iasearch-fraud-lab-rg --subscription ca1eeeca-231f-4a91-a740-04eaeb043516
+ az vmss list-ip-adresses  -n myVMSS --resource-group iasearch-fraud-lab-rg --subscription <subscription>
  ```
 
 
  List nic car from VMSS
 ```
- az vmss nic list  --vmss-name  <VMSS NAME>  --resource-group <RESOURCE GROUP> --subscription <souscription>
+ az vmss nic list  --vmss-name  <VMSS NAME>  --resource-group <RESOURCE GROUP> --subscription <subscription>
  ```

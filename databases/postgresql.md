@@ -7,7 +7,7 @@ az postgres server firewall-rule create --resource-group myresourcegroup --serve
 * List databases from an instances
 * Create a firewall at postgresql level
 ```
-az postgres db list  -g iasearch-fraud-lab-rg -s iasearch-fraud-lab-rgdevpostgres
+az postgres db list  -g myresourcegroup -s irgdevpostgres
 mydemoserver --name AllowMyIP --start-ip-address 192.168.0.1 --end-ip-address 192.168.0.1
 ```
 
